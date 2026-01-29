@@ -1,6 +1,5 @@
 
-import datetime as dt
+n = "zero"
 
-data = dt.datetime.now()
-
-print(data)
+for tt in n:
+    print(tt)

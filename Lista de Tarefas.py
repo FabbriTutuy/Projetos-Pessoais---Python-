@@ -1,29 +1,35 @@
 # Lista de Tarefas - NÃO ESTÁ COMPLETA , PRECISA FINALIZAR
-import pandas as pd
 
-listas_de_afazeres = 0
+def cabecalho(msg):
+
+    print("-"*32)
+    print(f"{msg:^32}")
+    print("-"*32)
+
+
+def menu():
+
+    print("-"*32)
+    print("[1] Ver a lista de tarefas")
+    print("[2] Adicionar uma tarefa ")
+    print("[3] Excluir uma Tarefa")
+    print("[4] Sair")
+    print("-"*32)
+
+
+cabecalho("INICIANDO PROGRAMA")
 
 while True:
-    tarefa = input("Digite uma tarefa para adicionar à lista (ou 'sair' para encerrar): ")
 
-    if tarefa.lower() == 'sair':
-        print("Encerrando o programa de lista de tarefas.")
-        break   
+    menu()
 
-    elif tarefa.strip() == "":
-        print("Você não digitou nenhuma tarefa. Tente novamente.")
-        continue
+    try:
+        escolha = int(input("Oque deseja fazer: "))
 
-    elif tarefa in tarefas:
-        print("Essa tarefa já está na lista.")
-        continue
+    except:
+        print("\033[31mTente Novamente isso não é válido!!\033[0m")
 
     else:
-        tarefas.append(tarefa)
-        print(f"Tarefa '{tarefa}' adicionada à lista.")
-        tarefa = datetime.now()
-        print(f"Essa tarefa foi adicionado :{tarefa}")
-
-print("\nSua lista de tarefas:")
-for idx, tarefa in enumerate(tarefas, start=1):
-    print(f"{idx}. {tarefa}")
+        if escolha == 4:
+            print("Obrigado por usar o programa")
+            break
