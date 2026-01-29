@@ -1,7 +1,7 @@
-# Lista de Tarefas
-from datetime import datetime
+# Lista de Tarefas - NÃO ESTÁ COMPLETA , PRECISA FINALIZAR
+import pandas as pd
 
-tarefas = []
+listas_de_afazeres = 0
 
 while True:
     tarefa = input("Digite uma tarefa para adicionar à lista (ou 'sair' para encerrar): ")
