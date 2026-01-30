@@ -1,5 +1,3 @@
+from rich import print
 
-n = "zero"
-
-for tt in n:
-    print(tt)
+print("[bold red]Olá[/]")

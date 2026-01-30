@@ -1,4 +1,11 @@
-# Lista de Tarefas - NÃO ESTÁ COMPLETA , PRECISA FINALIZAR
+from rich import print
+
+# =-=-= VARIAVEIS =-=-=
+
+arquivo = "tarefas.txt"
+funcoes = ["Ver lista de tarefas","Adicionar uma tarefa","Excluir uma tarefa","Sair"]
+
+# =-=-= FUNÇÕES =-=-=
 
 def cabecalho(msg):
 
@@ -9,19 +16,40 @@ def cabecalho(msg):
 
 def menu():
 
-    print("-"*32)
-    print("[1] Ver a lista de tarefas")
-    print("[2] Adicionar uma tarefa ")
-    print("[3] Excluir uma Tarefa")
-    print("[4] Sair")
-    print("-"*32)
+    cabecalho("MENU PRINCIPAL")
 
+def ArquivoExiste(nome_do_arquivo):
+
+    try:
+        a = open(nome_do_arquivo,"rt")
+        a.close()
+
+    except FileNotFoundError:
+        return False
+    
+    else:
+        return True
+    
+def CriarArquivo(nome_do_arquivo):
+    
+    try:
+        a = open(nome_do_arquivo,"wt+")
+        a.close()
+
+    except:
+        print("[bold red]Erro na criação do arquivo! Tente Novamente.[/]")
+
+    else:
+        print("[bold green]Criação do Arquivo foi um sucesso[/]")
+
+# =-=-= PROGRAMA =-=-=
+
+if not ArquivoExiste(arquivo):
+    CriarArquivo(arquivo)
 
 cabecalho("INICIANDO PROGRAMA")
 
 while True:
-
-    menu()
 
     try:
         escolha = int(input("Oque deseja fazer: "))
